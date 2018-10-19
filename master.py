@@ -69,10 +69,9 @@ def receive_id(clientsocket, address):
 input('press ENTER key to start the stopwatch ')
 start = time.time()
 
-
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket .setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-serversocket.bind((socket.gethostname(), config.SERVER_PORT))
+serversocket.bind(('0.0.0.0', config.SERVER_PORT))
 serversocket.listen(5)
 
 while True:
